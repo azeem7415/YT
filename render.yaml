@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: youtube-downloader
+    runtime: node
+    buildCommand: npm install && bash build.sh
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DOWNLOAD_DIR
+        value: /tmp/downloads
